@@ -1,0 +1,12 @@
+[AuthServer]
+Addr = "0.0.0.0"
+Port = 8093
+Network = "tcp"
+Name = "auth"
+JwtSecret = "secret"
+
+[Redis]
+Host = "localhost"
+Port = 6379
+Password = ""
+Db = 9

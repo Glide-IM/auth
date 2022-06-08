@@ -1,0 +1,44 @@
+syntax = "proto3";
+package auth.glide_im.github.com;
+
+option go_package = "pkg/proto";
+
+message Response {
+  enum ResponseCode {
+    OK = 0;
+    ERROR = 1;
+  }
+
+  int32 code = 1;
+  string msg = 2;
+}
+
+message Token {
+  string token = 1;
+}
+
+message AuthRequest {
+  bytes authInfo = 1;
+  Token token = 2;
+}
+
+message AuthResponse {
+  bool success = 1;
+  bytes response = 2;
+}
+
+message RemoveTokenRequest {
+  Token token = 1;
+}
+
+message RemoveTokenResponse {
+
+}
+
+message GenTokenRequest {
+  bytes authInfo = 1;
+}
+
+message GetTokenResponse {
+  Token token = 1;
+}
